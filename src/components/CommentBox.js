@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+// user files
+import requireAuth from './requireAuth'
+
 
 class CommentBox extends Component {
   state = { comment: '' };
@@ -10,7 +13,6 @@ class CommentBox extends Component {
   handleChange = (event) => { this.setState({ comment: event.target.value }) }
 
   handleSubmit = (event) => {
-    // prevent our page from attempting to reload
     event.preventDefault()
     this.props.saveComment(this.state.comment)
     this.setState({ comment: '' })
@@ -35,4 +37,4 @@ class CommentBox extends Component {
 
 }
 
-export default connect(null, actions)(CommentBox);
+export default connect(null, actions)(requireAuth(CommentBox));

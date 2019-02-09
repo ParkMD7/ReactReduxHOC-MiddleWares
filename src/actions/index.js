@@ -2,8 +2,8 @@
 import axios from 'axios';
 
 // user files
-import { SAVE_COMMENT } from './types.js'
-import { FETCH_COMMENTS } from './types.js'
+import { SAVE_COMMENT, FETCH_COMMENTS, CHANGE_AUTH } from './types.js'
+
 
 export function saveComment(comment){
   return {
@@ -19,5 +19,13 @@ export function fetchComments(){
   return {
     type: FETCH_COMMENTS,
     payload: response
+  }
+}
+
+
+export function changeAuth(isLoggedIn){
+  return {
+    type: CHANGE_AUTH,
+    payload: isLoggedIn
   }
 }
