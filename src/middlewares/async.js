@@ -1,5 +1,4 @@
-// NOTE: this file will house custom middleware
-// NOTE: we will build async action creators -> action creators that return a promise on its payload property
+// NOTE: this file will house custom middleware to build an async action creator -> action creator that return a promise on its payload property
 
 // NOTE: for the first function will be called with the dispatch property
 // export default function({ dispatch }){
@@ -11,6 +10,7 @@
 //     }
 //   }
 // }
+
 
 // Refactored above -> 100% the exact same
 export default ({ dispatch }) => (next) => (action) => {
